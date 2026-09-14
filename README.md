@@ -1,2 +1,59 @@
 # Integrated-Final-Website
 Hello, this is group 5. Testing !
+For now don't worry about the README.md 
+GUYS COPY PASTE this HTML SHELL and build your webpages from it:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+    <meta name="description" content="PNG Events Hub">
+    <title>PNG Events Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                PNG Events Hub
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="events.html">Events</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Page-specific content goes here -->
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 PNG Events Hub. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
