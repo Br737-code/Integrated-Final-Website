@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="PNG Events Hub" />
-
-    <title>PNG Events Hub</title>
+    <meta
+      name="description"
+      content="Discover upcoming community events, cultural festivals, sports, educational workshops, and music concerts across Papua New Guinea."
+    />
+    <title>Events | PNG Events Hub</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
+    <!-- Header & Shared Navigation -->
     <header>
       <div class="container">
-        <div class="logo">
-          <a href="index.html">PNG Events Hub</a>
-        </div>
+        <div class="logo">PNG Events Hub</div>
 
-        <nav>
+        <nav aria-label="Main Navigation">
           <a href="index.html">Home</a>
-          <a href="events.html">Events</a>
+          <a href="events.html" class="active" aria-current="page">Events</a>
           <a href="about.html">About</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
@@ -27,14 +28,155 @@
       </div>
     </header>
 
+    <!-- Main Content Area -->
     <main>
-      <!-- Page content goes here -->
+      <!-- Hero / Section Header -->
+      <section class="events-hero">
+        <div class="container">
+          <h1>Upcoming Events</h1>
+          <p>
+            Discover upcoming community events happening around Papua New
+            Guinea.
+          </p>
+        </div>
+      </section>
+
+      <!-- Category Filter Controls (Member 2 Feature) -->
+      <section
+        class="filter-section container"
+        aria-label="Event Category Filter"
+      >
+        <h2>Filter by Category</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="all">
+            All Events
+          </button>
+          <button class="filter-btn" data-category="cultural">Cultural</button>
+          <button class="filter-btn" data-category="sports">Sports</button>
+          <button class="filter-btn" data-category="education">
+            Education
+          </button>
+          <button class="filter-btn" data-category="music">Music</button>
+        </div>
+      </section>
+
+      <!-- Events Display Section -->
+      <section class="events-section">
+        <div class="container">
+          <h2>Featured Events</h2>
+
+          <div class="events-container" id="eventsContainer">
+            <!-- Cultural Event Card -->
+            <article class="event-card" data-category="cultural">
+              <img
+                src="images/event1.jpg"
+                alt="People attending a cultural event"
+              />
+
+              <div class="event-content">
+                <span class="category-badge badge-cultural">Cultural</span>
+                <h3>PNG Cultural Festival</h3>
+
+                <p><strong>Date:</strong> 15 October 2026</p>
+
+                <p><strong>Location:</strong> Lae, Morobe Province</p>
+
+                <p>
+                  Experience traditional performances, music, food, and cultural
+                  displays from different communities.
+                </p>
+
+                <a href="#" class="event-button">View Details</a>
+              </div>
+            </article>
+
+            <!-- Education Event Card -->
+            <article class="event-card" data-category="education">
+              <img
+                src="images/event2.jpg"
+                alt="Students attending a technology event"
+              />
+
+              <div class="event-content">
+                <span class="category-badge badge-education">Education</span>
+                <h3>Technology Expo</h3>
+
+                <p><strong>Date:</strong> 22 October 2026</p>
+
+                <p><strong>Location:</strong> Lae</p>
+
+                <p>
+                  Explore technology projects, digital ideas, and innovations
+                  presented by students and local organisations.
+                </p>
+
+                <a href="#" class="event-button">View Details</a>
+              </div>
+            </article>
+
+            <!-- Sports Event Card -->
+            <article class="event-card" data-category="sports">
+              <img
+                src="images/event3.jpg"
+                alt="People taking part in a sporting event"
+              />
+
+              <div class="event-content">
+                <span class="category-badge badge-sports">Sports</span>
+                <h3>Community Sports Day</h3>
+
+                <p><strong>Date:</strong> 30 October 2026</p>
+
+                <p><strong>Location:</strong> Lae Sports Ground</p>
+
+                <p>
+                  Join the community for a day of sports, games, and activities
+                  for students, families, and local residents.
+                </p>
+
+                <a href="#" class="event-button">View Details</a>
+              </div>
+            </article>
+
+            <!-- Music Event Card -->
+            <article class="event-card" data-category="music">
+              <img
+                src="images/event4.jpg"
+                alt="Live musical performance stage"
+              />
+
+              <div class="event-content">
+                <span class="category-badge badge-music">Music</span>
+                <h3>Port Moresby Live Concert</h3>
+
+                <p><strong>Date:</strong> 12 November 2026</p>
+
+                <p>
+                  <strong>Location:</strong> Sir John Guise Stadium, Port
+                  Moresby
+                </p>
+
+                <p>
+                  Enjoy live musical performances featuring popular local bands,
+                  traditional fusion sounds, and solo artists.
+                </p>
+
+                <a href="#" class="event-button">View Details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <!-- Shared Footer -->
     <footer>
       <div class="container">
         <p>&copy; 2026 PNG Events Hub. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Shared JavaScript File -->
+    <script src="js/script.js"></script>
   </body>
 </html>
