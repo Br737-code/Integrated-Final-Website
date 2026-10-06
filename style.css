@@ -97,3 +97,17 @@ nav a.active {
   display: flex;
   justify-content: center;
 }
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 30px;
+  outline: none;
+  background-color: #ffffff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
