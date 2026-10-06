@@ -41,11 +41,22 @@
         </div>
       </section>
 
-      <!-- Category Filter Controls (Member 2 Feature) -->
+      <!-- Category Filter Controls -->
       <section
         class="filter-section container"
         aria-label="Event Category Filter"
       >
+        <!-- Search Input (recently added)-->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search events by title, description, or location..."
+            aria-label="Search events by keyword"
+          />
+        </div>
+
         <h2>Filter by Category</h2>
         <div class="filter-buttons">
           <button class="filter-btn active" data-category="all">
