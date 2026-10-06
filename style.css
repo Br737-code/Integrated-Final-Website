@@ -84,3 +84,10 @@ nav a.active {
   font-size: 1.15rem;
   color: #cbd5e1;
 }
+
+/* MEMBER 6: SEARCH BAR & MEMBER 2: FILTER BUTTONS*/
+
+.filter-section {
+  margin: 2.5rem auto 1.5rem auto;
+  text-align: center;
+}
