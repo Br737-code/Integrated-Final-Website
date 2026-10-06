@@ -65,3 +65,12 @@ nav a.active {
   background-color: #0284c7;
   color: #ffffff;
 }
+
+/* HERO SECTION */
+
+.events-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+  padding: 3.5rem 0;
+  text-align: center;
+}
