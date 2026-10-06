@@ -116,3 +116,9 @@ nav a.active {
   border-color: #0284c7;
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
 }
+
+.filter-section h2 {
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
