@@ -39,3 +39,8 @@ header .container {
   color: #38bdf8;
   letter-spacing: 0.5px;
 }
+
+nav {
+  display: flex;
+  gap: 1.25rem;
+}
