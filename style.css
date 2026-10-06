@@ -141,3 +141,9 @@ nav a.active {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+}
