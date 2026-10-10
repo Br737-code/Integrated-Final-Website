@@ -13,4 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(
     "Events Hub script loaded. Found " + eventCards.length + " cards.",
   );
+
+  let currentCategory = "all";
+
+  // Category button click handling (Member 2)
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((filterButton) =>
+        filterButton.classList.remove("active"),
+      );
+      button.classList.add("active");
+
+      currentCategory = button.getAttribute("data-category") || "all";
+
+      eventCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+        const matchesCategory =
+          currentCategory === "all" || cardCategory === currentCategory;
+        card.classList.toggle("hidden", !matchesCategory);
+      });
+    });
+  });
 });
