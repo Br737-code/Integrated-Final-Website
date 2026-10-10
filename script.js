@@ -1,5 +1,5 @@
 // PNG EVENTS HUB - INTERACTIVE FEATURES
-// MILESTONE 3: MEMBER 6 KEYWORD SEARCH
+// MEMBER 2: CATEGORY FILTER & MEMBER 6: KEYWORD SEARCH
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
@@ -18,15 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("active");
 
       currentCategory = button.getAttribute("data-category") || "all";
-      applyFilters();
+      filterEvents();
     });
   });
 
   if (searchInput) {
-    searchInput.addEventListener("input", applyFilters);
+    searchInput.addEventListener("input", filterEvents);
   }
 
-  function applyFilters() {
+  function filterEvents() {
     const searchQuery = searchInput
       ? searchInput.value.toLowerCase().trim()
       : "";
