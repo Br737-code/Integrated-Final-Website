@@ -1,22 +1,15 @@
 // PNG EVENTS HUB - INTERACTIVE FEATURES
-// MILESTONE 1: SCRIPT INITIALIZATION & DOM SELECTION
+// MILESTONE 3: MEMBER 6 KEYWORD SEARCH
 
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM element selections
   const searchInput = document.getElementById("searchInput");
   const filterButtons = document.querySelectorAll(".filter-btn");
   const eventCards = document.querySelectorAll(".event-card");
 
-  // Exit if the current page has no event cards.
   if (eventCards.length === 0) return;
-
-  console.log(
-    "Events Hub script loaded. Found " + eventCards.length + " cards.",
-  );
 
   let currentCategory = "all";
 
-  // Category button click handling (Member 2)
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       filterButtons.forEach((filterButton) =>
@@ -25,13 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("active");
 
       currentCategory = button.getAttribute("data-category") || "all";
-
-      eventCards.forEach((card) => {
-        const cardCategory = card.getAttribute("data-category");
-        const matchesCategory =
-          currentCategory === "all" || cardCategory === currentCategory;
-        card.classList.toggle("hidden", !matchesCategory);
-      });
+      applyFilters();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  function applyFilters() {
+    const searchQuery = searchInput
+      ? searchInput.value.toLowerCase().trim()
+      : "";
+
+    eventCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category");
+      const cardText = card.textContent.toLowerCase();
+      const matchesCategory =
+        currentCategory === "all" || cardCategory === currentCategory;
+      const matchesSearch =
+        searchQuery === "" || cardText.includes(searchQuery);
+
+      card.classList.toggle("hidden", !(matchesCategory && matchesSearch));
+    });
+  }
 });
