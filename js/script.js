@@ -23,3 +23,53 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// ===== Member 6: Event search =====
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('event-search');
+  if (!searchInput) return; // this page has no search box
+
+  const searchForm = document.getElementById('search-form');
+  const clearButton = document.getElementById('search-clear');
+  const statusText = document.getElementById('search-status');
+  const noResults = document.getElementById('no-results');
+  const cards = document.querySelectorAll('.event-card'); // Member 2's cards
+
+  function runSearch() {
+    const keyword = searchInput.value.trim().toLowerCase();
+    let matches = 0;
+
+    cards.forEach(function (card) {
+      const found = card.textContent.toLowerCase().includes(keyword);
+      card.classList.toggle('search-hidden', !found);
+      if (found) matches++;
+    });
+
+    noResults.hidden = matches !== 0;
+    statusText.textContent = keyword
+      ? matches + ' event(s) found for "' + searchInput.value.trim() + '"'
+      : '';
+
+    try { localStorage.setItem('lastEventSearch', searchInput.value.trim()); } catch (e) {}
+  }
+
+  searchInput.addEventListener('input', runSearch);
+
+  searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    runSearch();
+  });
+
+  clearButton.addEventListener('click', function () {
+    searchInput.value = '';
+    runSearch();
+    searchInput.focus();
+  });
+
+  // Start with a keyword from the link (events.html?q=music), or the last search
+  const urlKeyword = new URLSearchParams(window.location.search).get('q');
+  let saved = '';
+  try { saved = localStorage.getItem('lastEventSearch') || ''; } catch (e) {}
+  searchInput.value = urlKeyword !== null ? urlKeyword : saved;
+  runSearch();
+});
