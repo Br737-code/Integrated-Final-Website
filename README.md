@@ -13,7 +13,7 @@ PNG Events Hub is a multi-page website that helps people discover cultural, spor
 | Brendan MARAN     | 25530136   | Home and Navigation              |
 | Lydia SAPMANGUA   | 24202380   | Events Directory                 |
 | Shalom MANAGEN    | 25530201   | Responsive Styling & Integration |
-| Yedi Yannah YUWOM | 2553029    | Community Gallery                |
+| Yedi Yannah YUWOM | 25530294   | Community Gallery                |
 | Dasha TELIKADAH   | 25530081   | About and FAQ                    |
 | Joseph SEETO      | 25530061   | Events Page                      |
 
