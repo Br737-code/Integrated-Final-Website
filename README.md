@@ -1,260 +1,272 @@
-# PNG Events Hub — Integrated Website Project
+````markdown
+# PNG Events Hub
 
-Welcome to the **PNG Events Hub** repository, a collaborative web development project by Group 5 for IS229 Web Design — Assessment 4.
+PNG Events Hub is a multi-page website that helps people discover cultural, sports, music, education, and community events across Papua New Guinea. It addresses the problem of event information being shared through word of mouth or scattered social-media posts by bringing event listings, search, category filtering, registration, and event images into one website.
 
-The project aims to create a community-focused website where users can discover cultural festivals, sporting competitions, educational workshops, music events, and other activities across Papua New Guinea.
+## Live Website
 
-**PNG Events Hub is currently in development.** Team members are working on their assigned webpages and features before integrating their work into a single website. This README will be updated as development progresses.
+- Published URL: https://br737-code.github.io/Integrated-Final-Website/
 
----
+## Project Team
 
-## 1. Project Overview
+| Name              | Student ID | Role / Key Contributions         |
+| ----------------- | ---------- | -------------------------------- |
+| Brendan MARAN     | 25530136   | Home and Navigation              |
+| Lydia SAPMANGUA   | 24202380   | Events Directory                 |
+| Shalom MANAGEN    | 25530201   | Responsive Styling & Integration |
+| Yedi Yannah YUWOM | 2553029    | Community Gallery                |
+| Dasha TELIKADAH   | 25530081   | About and FAQ                    |
+| Joseph SEETO      | 25530061   | Events Page                      |
 
-- **Project Title:** PNG Events Hub
-- **Project Group:** Group 5
-- **Unit/Course:** IS229 Web Design — Assessment 4 (Web Design Project)
-- **Project Type:** Multi-page website
-- **Current Status:** In Development
-- **Live Website:** To be added when the website is ready for deployment.
+## Project Overview
 
-### Project Purpose
+- **Target audience:** Residents and families looking for local activities, students seeking campus events and workshops, and event organisers who want to reach a wider audience.
+- **Project goals:** To provide a simple, central, and easy-to-read place to find events across Papua New Guinea, including their dates, locations, categories, and registration options.
+- **Main user tasks:** Browse upcoming events, search by keyword or location, filter events by category, view event photographs, register for an event, and send a general enquiry.
+- **Problem/opportunity addressed:** Community events are often advertised only through word of mouth or on separate social-media pages, which can make them difficult for people to find.
 
-The purpose of PNG Events Hub is to provide a central place for people to discover and explore events taking place across Papua New Guinea.
+## Features
 
-### Project Objectives
+- Semantic multi-page HTML5 website with Home, Events, About, Gallery, and Contact pages.
+- Responsive design for mobile, tablet, and desktop using media queries, flexible layouts, CSS Grid, and Flexbox.
+- JavaScript feature 1: Home-page search sends a keyword to the Events page, where matching event cards are displayed.
+- JavaScript feature 2: Events can be filtered by Cultural, Sports, Education, and Music categories, with a live result count and no-results message.
+- JavaScript feature 3: The Gallery uses a native dialog lightbox with close, previous, next, keyboard-arrow, and touch-swipe controls.
+- Accessible form with HTML and JavaScript validation for full name, email address, phone number, selected event, number of attendees, and consent.
+- Meaningful feedback for form users through field-level error messages, `aria-invalid` attributes, a live status message, and a success confirmation.
 
-The project aims to:
+## Site Structure
 
-- Present information about cultural, sporting, educational, and music events.
-- Organise event information in a clear and accessible format.
-- Showcase event photographs and community activities through an image gallery.
-- Introduce the purpose of the platform and provide relevant information about it.
-- Provide a contact or registration form for user enquiries.
-- Develop a responsive website that works across desktop, tablet, and mobile devices.
-- Apply HTML, CSS, JavaScript, accessibility, and web design principles learned in IS229.
+### Sitemap
 
-These objectives describe the intended outcome of the project. Features will be implemented and reviewed as development continues.
+```text
+Home (index.html)
+├── Events (events.html)
+│   └── Contact and Register (contact.html)
+├── About (about.html)
+├── Gallery (gallery.html)
+└── Contact and Register (contact.html)
+```
 
----
+### Pages and Purposes
 
-## 2. Team Members and Responsibilities
+- **Home:** Introduces PNG Events Hub, provides event search, highlights three upcoming events, and explains the website’s purpose.
+- **About:** Explains the project mission, intended users, team roles, and frequently asked questions.
+- **Services/Products:** No separate Services/Products page is included in the current website.
+- **Contact:** Allows users to register for an event or send a general enquiry.
+- **Other pages:** **Events** provides searchable and filterable event listings; **Gallery** displays six event-related images in an interactive lightbox.
 
-The project is divided among six team members. Each member is assigned a webpage or a specific area of development to contribute to the overall website.
+## Design
 
-| Team Member | Assigned Page or Role    | HTML and CSS Responsibilities                                                               | Planned JavaScript Feature                    |
-| ----------- | ------------------------ | ------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| Member 1    | Home (`index.html`)      | Header, navigation, hero banner, featured events, and responsive navigation styling         | Mobile navigation toggle                      |
-| Member 2    | Events (`events.html`)   | Event cards, CSS Grid layout, and category filter buttons                                   | Event category filtering                      |
-| Member 3    | Gallery (`gallery.html`) | Responsive image grid, captions, image alternative text, and modal styling                  | Interactive image lightbox                    |
-| Member 4    | About (`about.html`)     | Mission statement, target audience, organiser profiles, and FAQ styling                     | Interactive FAQ accordion                     |
-| Member 5    | Contact (`contact.html`) | Contact or registration form, input labels, and form styling                                | Client-side form validation and user feedback |
-| Member 6    | Search and Integration   | Keyword search interface, shared responsive styling, and integration of individual webpages | Keyword search filtering                      |
+### Wireframes
 
-**Note:** Replace the member labels with the actual names of the team members. These responsibilities represent the planned division of work and should be updated if the group changes its assignments.
+#### Home Page
 
----
+```mermaid
+flowchart TD
+    A[Header: Logo and Navigation] --> B[Hero Section]
+    B --> C[Heading and Website Introduction]
+    C --> D[Event Search Bar]
+    D --> E[Browse Events and Register Buttons]
+    E --> F[Coming Up Soon]
+    F --> G[Featured Event Card 1]
+    F --> H[Featured Event Card 2]
+    F --> I[Featured Event Card 3]
+    I --> J[Why PNG Events Hub Section]
+    J --> K[Footer]
+```
 
-## 3. Repository File Structure
+#### Events Page
 
-The project is being organised into separate HTML pages, a shared CSS stylesheet, a JavaScript file, and an image directory.
+```mermaid
+flowchart TD
+    A[Header: Logo and Navigation] --> B[Upcoming Events Heading]
+    B --> C[Keyword Search Bar]
+    C --> D[Category Filter Buttons]
+    D --> E[Featured Events Grid]
+    E --> F[Event Cards with Image, Details and View Details Link]
+    F --> G[Footer]
+```
+
+#### About Page
+
+```mermaid
+flowchart TD
+    A[Header: Logo and Navigation] --> B[About PNG Events Hub Introduction]
+    B --> C[Mission Section]
+    C --> D[Target Audience Cards]
+    D --> E[Project Team Section]
+    E --> F[Frequently Asked Questions Accordion]
+    F --> G[Footer]
+```
+
+#### Gallery Page
+
+```mermaid
+flowchart TD
+    A[Header: Logo and Navigation] --> B[Gallery Introduction]
+    B --> C[Responsive Image Gallery Grid]
+    C --> D[Image Captions]
+    D --> E[Interactive Lightbox]
+    E --> F[Previous, Next and Close Controls]
+    F --> G[Footer]
+```
+
+#### Contact and Registration Page
+
+```mermaid
+flowchart TD
+    A[Header: Logo and Navigation] --> B[Register or Contact Us Introduction]
+    B --> C[Registration Form]
+    C --> D[Personal Details Fields]
+    D --> E[Event Registration Fields]
+    E --> F[Consent Checkbox]
+    F --> G[Send Registration and Clear Form Buttons]
+    G --> H[Validation and Feedback Messages]
+    H --> I[Footer]
+```
+
+### Design System
+
+- Colour palette: Dark ink `#1c1a17`, white `#ffffff`, sand `#f1ebdd`, Papua New Guinea flag red `#c8102e`, gold `#fcd116`, green `#0e5a3a`, deep green `#0a3f29`, and blue `#1d4f91`.
+- Typography: Bricolage Grotesque is used for headings, and Public Sans is used for body text. Both are loaded from Google Fonts.
+- Layout/design system: The site uses shared design tokens, consistent containers, card layouts, rounded corners, shadows, a PNG-flag-colour woven strip, reusable buttons, and a shared header and footer design.
+- Responsive approach: CSS media queries adapt layouts at 900px, 768px, 640px, 600px, and 480px. Flexible grids, wrapping controls, flexible cards, and mobile-specific navigation and lightbox layouts support smaller screens.
+
+## Technologies Used
+
+- HTML5
+- CSS3, including Flexbox and Grid
+- Vanilla JavaScript
+- Git and GitHub
+
+## Accessibility
+
+- Semantic HTML structure using `header`, `nav`, `main`, `section`, `article`, `footer`, `figure`, `fieldset`, `legend`, and heading elements.
+- Alternative text for content images and form labels for form controls.
+- Keyboard navigation and visible focus through native buttons and links, visible focus styles, an accessible gallery dialog, Escape-key support for the home navigation menu, and arrow-key support for gallery navigation.
+- Colour contrast: Dark text, white and sand backgrounds, visible blue focus outlines, and contrasting form-validation states are defined in the CSS. [ADD: confirm colour contrast with a contrast-checking tool]
+
+## Testing
+
+- **Functional testing:** Completed 12 test cases (F01-F12) covering mobile navigation, search, category filtering, FAQ accordion, gallery lightbox, form validation, character counter, navigation links, and skip links. All 12 tests passed, with 0 failures (100% pass rate).
+- **Responsive testing:** Tested at 375px, 430px, 768px, 1024px, and 1440px+ viewports, using browser device emulation and real mobile, tablet, laptop, and monitor devices. All 12 responsive checks passed with 0 failures.
+- **Browser compatibility testing:** Tested across seven desktop and mobile browser/operating-system combinations. No critical issues were found; Firefox showed one minor focus-outline colour difference.
+- **HTML/CSS validation:** All five HTML pages and six CSS stylesheets passed validation with 0 errors. Accessibility checks also passed for semantic HTML, alt text, labels, keyboard navigation, focus visibility, contrast, ARIA attributes, skip links, touch targets, and reduced motion.
+- **Usability testing:** No separate user usability-testing study is recorded in the testing report. Responsive and accessibility checks confirmed readable content, usable touch targets, keyboard access, and no horizontal overflow.
+- **Testing report/evidence:** [View the PNG Events Hub Testing Report](PNG_Events_Hub_Testing_Report.docx)
+
+## Installation / Running Locally
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Br737-code/Integrated-Final-Website
+   ```
+
+2. Open the `Integrated-Final-Website` project folder.
+
+3. Open `index.html` in a web browser, or run the project with a local development server.
+
+## Repository Structure
 
 ```text
 Integrated-Final-Website/
-│
-├── index.html          # Home page
-├── events.html         # Events directory
-├── gallery.html        # Community image gallery
-├── about.html          # About page and FAQs
-├── contact.html        # Contact and registration page
-│
+├── about.html
+├── contact.html
+├── events.html
+├── gallery.html
+├── index.html
+├── README.md
 ├── css/
-│   └── style.css       # Shared stylesheet
-│
-├── js/
-│   └── script.js       # Shared JavaScript functionality
-│
-├── images/             # Images and visual assets
-│
-└── README.md           # Project documentation
+│   ├── about.css
+│   ├── contact.css
+│   ├── events.css
+│   ├── gallery.css
+│   ├── index.css
+│   └── style.css
+├── images/
+│   ├── gallery-1.jpg
+│   ├── gallery-2.jpg
+│   ├── gallery-3.jpg
+│   ├── gallery-4.jpg
+│   ├── gallery-5.jpg
+│   ├── gallery-6.jpg
+│   └── img1.jpg
+└── js/
+    ├── about.js
+    ├── contact.js
+    ├── events.js
+    ├── gallery.js
+    └── index.js
 ```
 
-The structure may change as the project develops. Additional files or folders can be added when required.
+## Individual Contribution Statement
 
----
+| Team Member       | Contributions                                                                                       |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| Brendan MARAN     | Created the Home page and navigation, and supervised the project.                                   |
+| Lydia SAPMANGUA   | Created the Events Directory and event listings, and completed testing and report evidence.         |
+| Shalom MANAGEN    | Completed responsive styling and integrated the website documentation.                              |
+| Yedi Yannah YUWOM | Created the Community Gallery and image lightbox, and contributed 50% of the website documentation. |
+| Dasha TELIKADAH   | Created the About page and FAQ accordion.                                                           |
+| Joseph SEETO      | Contributed to the Events page and README file.                                                     |
 
-## 4. Technologies and Tools
+## AI Use Declaration
 
-The following technologies and tools are intended for use during the development process.
+Our team used AI tools during this project. Claude was used by five team members, and GitHub Copilot was used by one team member. Based on each member's own account, the team's use of AI fell into the following areas:
 
-- **HTML5:** Used to structure webpages and their content.
-- **CSS3:** Used to style webpages and create responsive layouts with Flexbox, CSS Grid, and media queries.
-- **JavaScript:** Used to implement interactive features such as navigation toggles, event filtering, image lightboxes, and form validation.
-- **Visual Studio Code:** Used to write and manage project files.
-- **Git and GitHub:** Used for version control, repository management, and collaboration among team members.
-- **GitHub Copilot:** Used as an AI-assisted tool for debugging and helping resolve integration issues.
-- **GitHub Pages or another static hosting service:** A potential deployment option once the website is ready.
+- **Code generation:** AI generated most of the website's HTML and CSS, and the small JavaScript files used for interactive features on each page.
+- **Code integration:** merging different team members' code, resolving conflicts, and keeping the website consistent across pages.
+- **Debugging:** finding and fixing errors in the code.
+- **Git and GitHub guidance:** learning how to clone, commit, push, and merge using GitHub.
 
-The tools and features listed above describe the project's development approach. Their implementation and use may evolve as the work progresses.
+Because most of the code was AI-generated, the team's own contribution was in directing, reviewing, testing, and adapting it. The team reviewed and adapted the AI output in the following ways:
 
----
+- Generated code was read and edited to fit our client's theme, content, and design.
+- The JavaScript features were tested in the browser to confirm they work as intended on each page.
+- Pages were tested on mobile, tablet, and desktop screen sizes.
+- Merged code was checked after conflicts were resolved to make sure the site still worked.
+- Team members can explain how the code in their sections works.
 
-## 5. Shared HTML Starter Template
+Individual members' detailed use of AI is not recorded here, but each member reported using these tools responsibly.
 
-To maintain consistency across the website, team members should use the following HTML shell as the starting point for their assigned webpages.
+## License / Credits
 
-Each member should replace the placeholder inside the `<main>` element with the content required for their page while keeping the shared header, navigation, stylesheet reference, and footer consistent.
+### Fonts
 
-The template is a starting point and will be adjusted as necessary during development.
+- **Bricolage Grotesque** and **Public Sans** are provided by [Google Fonts](https://fonts.google.com/).
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+### Wikimedia Commons and Public-Domain Images
 
-    <meta
-      name="description"
-      content="Discover events and community activities across Papua New Guinea with PNG Events Hub."
-    />
+- **Amulet Figure, Papua New Guinea, Brücke Museum Berlin, 64964, view a** — Photograph by Nick Ash, Berlin; source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Amulet_Figure,_Papua_New_Guinea,_Brücke_Museum_Berlin,_64964,_view_a.jpg); licence: CC0 1.0.
+- **Participants During First Aid Training organized By Noorain Global Organization Gombe** — Photograph by Usman Alhaji Usman; source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Participants_During_First_Aid_Training_organized_By_Noorain_Global_Organization_Gombe.png); licence: CC0 1.0.
+- **KM23: Sports with local Papuans** — Photograph by Lance Cpl. Ricardo Ramirez, U.S. Marine Corps; source: [DVIDS](https://www.dvidshub.net/image/7945183/km23-sports-with-local-papuans); public domain.
 
-    <title>PNG Events Hub</title>
+### Unsplash Images
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header>
-      <div class="container">
-        <a href="index.html" class="logo"> PNG Events Hub </a>
+The following event-card images are loaded from Unsplash:
 
-        <nav aria-label="Main navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+- Cultural celebration — [Unsplash source](https://images.unsplash.com/photo-1608501408162-d9db758dd88e)
+- Interactive event booth — [Unsplash source](https://images.unsplash.com/photo-1750730677198-97439288abb7)
+- Gardening workshop — [Unsplash source](https://images.unsplash.com/photo-1621460248083-6271cc4437a8)
+- Educational seminar — [Unsplash source](https://images.unsplash.com/photo-1770096731083-5994253c1a6b)
+- Community fun run — [Unsplash source](https://images.unsplash.com/photo-1613936360976-8f35cf0e5461)
+- Coastal volleyball — [Unsplash source](https://images.unsplash.com/photo-1521138054413-5a47d349b7af)
+- Mountain-bike ride — [Unsplash source](https://images.unsplash.com/photo-1627044185459-09e6dbc39444)
+- Acoustic music performance — [Unsplash source](https://images.unsplash.com/photo-1471478331149-c72f17e33c73)
+- Choir performance — [Unsplash source](https://images.unsplash.com/photo-1598300023303-a7af0627557c)
+- Percussion performance — [Unsplash source](https://images.unsplash.com/photo-1523689119443-df96632084a1)
 
-    <!-- MAIN CONTENT -->
-    <main>
-      <!-- Add page-specific content here -->
-    </main>
+### Local Images - Source Required
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <p>&copy; 2026 PNG Events Hub. All rights reserved.</p>
-      </div>
-    </footer>
+The project contains the following local image files, but no creator, website, licence, or embedded metadata is recorded for them. Replace each placeholder with its real source before submitting.
 
-    <!-- JAVASCRIPT -->
-    <script src="js/script.js"></script>
-  </body>
-</html>
-```
-
-### Guidelines for Using the Template
-
-1. Save the webpage using the appropriate filename assigned to you.
-2. Add your page-specific content inside the `<main>` element.
-3. Use the shared stylesheet at `css/style.css` for styling.
-4. Add JavaScript functionality to `js/script.js` where appropriate, coordinating with the team to avoid conflicts.
-5. Keep navigation links consistent across all pages.
-6. Use relative paths for stylesheets, scripts, and images.
-7. Communicate with other members before making changes to shared files.
-8. Test your changes before merging or integrating them with the other webpages.
-
----
-
-## 6. Planned Website Features
-
-The following features are part of the current development plan. Their completion will depend on implementation, integration, and testing.
-
-- **Home page:** Introduction to PNG Events Hub and selected or featured events.
-- **Events page:** Event listings organised into cards, with category filtering.
-- **Gallery page:** A responsive collection of event and community images, with an interactive lightbox.
-- **About page:** Information about the project's purpose, target audience, and frequently asked questions.
-- **Contact page:** A contact or registration form with input validation and feedback.
-- **Search functionality:** Keyword-based searching to help users find relevant events.
-- **Responsive design:** Layouts that adapt to desktop, tablet, and mobile screens.
-- **Accessibility:** Semantic HTML, meaningful image alternative text, labelled form fields, and accessible navigation.
-
-These features are planned components of the website and should not be considered completed until they have been implemented and checked.
-
----
-
-## 7. Development and Collaboration
-
-Because this is a group project, effective communication and coordination are important throughout development.
-
-Team members are expected to:
-
-- Work primarily on their assigned webpages or responsibilities.
-- Keep the shared HTML structure and navigation consistent.
-- Coordinate changes to shared CSS and JavaScript files.
-- Use Git and GitHub to manage changes and collaborate where appropriate.
-- Avoid overwriting another team member's work.
-- Report integration problems and resolve conflicts collaboratively.
-- Review the combined website as individual pages are integrated.
-
-The website will be assembled progressively as team members develop and contribute their work.
-
----
-
-## 8. Running the Project Locally
-
-The website can be previewed locally during development as the required files become available.
-
-1. Clone or download the repository from GitHub.
-2. Open the project folder in Visual Studio Code.
-3. Check that the relevant HTML files, CSS, JavaScript, and image assets are present.
-4. Open `index.html` in a web browser or use the VS Code Live Server extension.
-5. Refresh the browser after making changes to view the latest version.
-6. Check the browser's developer tools for missing files, JavaScript errors, and other issues.
-
-As development continues, some pages or interactive features may be incomplete or temporarily unavailable.
-
----
-
-## 9. Testing and Integration
-
-Testing will take place throughout development as individual webpages and shared features are implemented.
-
-Areas to review include:
-
-- Correct navigation between webpages.
-- Consistent styling across the website.
-- Proper loading of CSS, JavaScript, and image files.
-- Correct behaviour of event filtering and keyword search.
-- Appropriate form validation and user feedback.
-- Responsive layouts across desktop, tablet, and mobile screen sizes.
-- Semantic HTML and accessibility considerations.
-- Broken links and browser console errors.
-- Compatibility of individual features when integrated into the shared website.
-
-The team will address identified issues as development progresses. Final testing will be carried out when the website is sufficiently complete.
-
----
-
-## 10. Project Status and Future Updates
-
-**Current Status: In Development**
-
-PNG Events Hub is an ongoing group project. Team members are developing individual pages, implementing planned features, and integrating their work into a unified website.
-
-As the project progresses, this README will be updated to reflect:
-
-- Actual team member names and any changes in responsibilities.
-- Features that have been implemented.
-- Changes to the repository structure.
-- Integration and testing progress.
-- The deployment link, once available.
-
-The project should only be described as complete after the planned work has been implemented, integrated, and reviewed.
-
----
+- `images/img1.jpg` - Home-page hero image.
+- `images/gallery-1.jpg` - Cultural festival dance image.
+- `images/gallery-2.jpg` - PNG Kumuls celebration image.
+- `images/gallery-3.jpg` - Meganesia concert image.
+- `images/gallery-4.jpg` - Ela Beach craft market image.
+- `images/gallery-5.jpg` - Computer-lab opening image.
+- `images/gallery-6.jpg` - PNG Unitech graduation image.
+````
